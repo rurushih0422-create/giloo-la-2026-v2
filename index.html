@@ -72,6 +72,33 @@
   .slide.accent .cols .col h3{color:#f0c6ce;}
   .cols .col p{font-size:1.1rem;line-height:1.5;max-width:26ch;}
 
+  /* flow infographic (numbered steps + arrows) */
+  .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:start;gap:1.2rem;margin-top:2.6rem;}
+  .flow-num{display:flex;align-items:center;justify-content:center;width:2.7rem;height:2.7rem;border-radius:50%;border:2px solid var(--accent);color:var(--accent);font-family:var(--sans);font-weight:700;font-size:1rem;margin-bottom:1rem;}
+  .slide.dark .flow-num,.slide.accent .flow-num{border-color:var(--accent-soft);color:var(--accent-soft);}
+  .flow-step h3{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.55rem;line-height:1.35;}
+  .slide.dark .flow-step h3,.slide.accent .flow-step h3{color:var(--accent-soft);}
+  .flow-step p{font-size:1.1rem;line-height:1.5;max-width:24ch;}
+  .flow-arrow{align-self:center;font-family:var(--sans);font-size:1.7rem;color:var(--muted);margin-top:2.4rem;}
+  .slide.dark .flow-arrow,.slide.accent .flow-arrow{color:#b9b0a4;}
+  @media (max-width:820px){.flow{grid-template-columns:1fr;}.flow-arrow{transform:rotate(90deg);margin:.4rem auto;}}
+
+  /* benefit cards (parallel items with icons) */
+  .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.6rem;}
+  .benefit .ico{width:2.5rem;height:2.5rem;margin-bottom:1rem;color:var(--accent);}
+  .slide.dark .benefit .ico,.slide.accent .benefit .ico{color:var(--accent-soft);}
+  .benefit .ico svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+  .benefit h3{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.55rem;}
+  .slide.dark .benefit h3,.slide.accent .benefit h3{color:var(--accent-soft);}
+  .benefit p{font-size:1.1rem;line-height:1.5;max-width:24ch;}
+  @media (max-width:820px){.benefits{grid-template-columns:1fr;}}
+
+  /* split layout: text left (teleprompter) + supporting graphic right */
+  .split{display:grid;grid-template-columns:1.12fr .88fr;gap:4vw;align-items:center;}
+  .split-graphic{display:flex;align-items:center;justify-content:center;}
+  .split-graphic svg{width:100%;max-width:440px;height:auto;}
+  @media (max-width:820px){.split{grid-template-columns:1fr;}.split-graphic{display:none;}}
+
   /* stacked lines (e.g. by-hand) */
   .stack{margin-top:1.8rem;display:grid;gap:.5rem;}
   .stack .li{font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:600;line-height:1.2;}
@@ -179,9 +206,37 @@
 
   <!-- 7 SUPER-SPREADERS -->
   <section class="slide">
-    <div class="kicker">Super-Spreaders</div>
-    <h2>Some audiences carry stories further.</h2>
-    <p class="lead">The most valuable audience members are not always the most numerous. They are the people and communities who host screenings, teach with the film, organize conversations, and bring the story into another room.</p>
+    <div class="split">
+      <div class="split-text">
+        <div class="kicker">Super-Spreaders</div>
+        <h2>Some audiences carry stories further.</h2>
+        <p class="lead">The most valuable audience members are not always the most numerous. They are the people and communities who host screenings, teach with the film, organize conversations, and bring the story into another room.</p>
+      </div>
+      <div class="split-graphic">
+        <svg viewBox="0 0 400 340" role="img" aria-label="One film spreads through carriers to many people">
+          <g stroke="var(--accent)" stroke-width="1.6" fill="none" opacity=".55">
+            <path d="M104 170 C150 120,165 92,196 82"/>
+            <path d="M104 170 H196"/>
+            <path d="M104 170 C150 220,165 248,196 258"/>
+          </g>
+          <g stroke="var(--accent-soft)" stroke-width="1.2" fill="none" opacity=".5">
+            <path d="M218 82 H300"/><path d="M218 82 C258 72,280 56,300 50"/><path d="M218 82 C258 92,280 108,300 114"/>
+            <path d="M218 170 H300"/><path d="M218 170 C258 160,280 146,300 140"/><path d="M218 170 C258 180,280 194,300 200"/>
+            <path d="M218 258 H300"/><path d="M218 258 C258 248,280 234,300 228"/><path d="M218 258 C258 268,280 282,300 288"/>
+          </g>
+          <g fill="var(--muted)">
+            <circle cx="308" cy="50" r="5"/><circle cx="308" cy="82" r="5"/><circle cx="308" cy="114" r="5"/>
+            <circle cx="308" cy="140" r="5"/><circle cx="308" cy="170" r="5"/><circle cx="308" cy="200" r="5"/>
+            <circle cx="308" cy="228" r="5"/><circle cx="308" cy="258" r="5"/><circle cx="308" cy="288" r="5"/>
+          </g>
+          <g fill="var(--paper)" stroke="var(--accent)" stroke-width="2.2">
+            <circle cx="206" cy="82" r="14"/><circle cx="206" cy="170" r="14"/><circle cx="206" cy="258" r="14"/>
+          </g>
+          <circle cx="84" cy="170" r="28" fill="var(--accent)"/>
+          <polygon points="75,158 75,182 97,170" fill="var(--paper)"/>
+        </svg>
+      </div>
+    </div>
     <p class="zh">最有價值的觀眾，不一定是數量最多的觀眾，而是那些會舉辦放映、用影片教學、組織對話，並把故事帶進下一個場域的人與社群。</p>
     <div class="pageno">07</div><div class="logo">giloo</div>
   </section>
@@ -194,20 +249,6 @@
     <p class="lead">When they bring in new viewers, they earn part of the revenue. This helps filmmakers reach new audiences through trusted voices.</p>
     <p class="zh">在 Giloo，觀眾、創作者、老師與社群領袖都可以成為 Impact Partner，把電影分享給他們認識的人。當他們帶來新觀眾，就能獲得部分分潤。這讓創作者能透過值得信任的聲音，觸及新的觀眾。</p>
     <div class="pageno">09</div><div class="logo">giloo</div>
-  </section>
-
-  <!-- IMPACT PARTNERS (how it works) -->
-  <section class="slide dark">
-    <div class="kicker">How It Works</div>
-    <h2>Four steps to reach more audiences.</h2>
-    <div class="cols" style="grid-template-columns:repeat(4,1fr);gap:1.8rem;">
-      <div class="col"><h3>01 · Become a partner</h3><p>Any Giloo member can activate Impact Partner status.</p></div>
-      <div class="col"><h3>02 · Choose a film</h3><p>Pick from the catalog: documentaries, festival titles, shorts, and animation.</p></div>
-      <div class="col"><h3>03 · Recommend it your way</h3><p>We provide materials and post templates to share it with the right audience.</p></div>
-      <div class="col"><h3>04 · Track and earn</h3><p>Every rental or new subscription through your link is tracked, and you earn a share.</p></div>
-    </div>
-    <p class="zh">四個步驟：成為 Impact Partner（任何 Giloo 會員都能開通）。選一部你愛的片（紀錄片、影展片、短片、動畫）。用你的方式推薦（我們提供素材與貼文模板）。查看成效、領取分潤（每筆透過你連結的租借或新訂閱都會被追蹤）。</p>
-    <div class="pageno">10</div><div class="logo">giloo</div>
   </section>
 
   <!-- 9 EVERY RELEASE -->
@@ -399,10 +440,12 @@
   <section class="slide">
     <div class="kicker">For Filmmakers: Start with Your Film</div>
     <h2>Upload once. Reach everywhere.</h2>
-    <div class="cols">
-      <div class="col"><h3>Step 01 · Upload your film</h3><p>A filmmaker uploads a finished film to Giloo.</p></div>
-      <div class="col"><h3>Step 02 · AI subtitles and translation</h3><p>AI creates subtitles and translates the film for different markets.</p></div>
-      <div class="col"><h3>Step 03 · AI distribution strategy</h3><p>AI suggests the right audiences, communities, and regions to start with, and where to distribute first.</p></div>
+    <div class="flow">
+      <div class="flow-step"><div class="flow-num">01</div><h3>Upload your film</h3><p>A filmmaker uploads a finished film to Giloo.</p></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="flow-num">02</div><h3>AI subtitles and translation</h3><p>AI creates subtitles and translates the film for different markets.</p></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="flow-num">03</div><h3>AI distribution strategy</h3><p>AI suggests the right audiences, communities, and regions to start with, and where to distribute first.</p></div>
     </div>
     <p class="zh">導演上傳完成的影片，AI 自動生成字幕並為不同市場翻譯，接著 AI 建議該從哪些觀眾、社群與地區開始、以及先在哪裡發行。上傳一次，觸及各地。</p>
     <div class="pageno">22</div><div class="logo">giloo</div>
@@ -412,10 +455,22 @@
   <section class="slide">
     <div class="kicker">What AI Empowers</div>
     <h2>Empower filmmakers to grow their value.</h2>
-    <div class="cols">
-      <div class="col"><h3>Reach new markets</h3><p>AI helps films cross languages and reach audiences in new regions.</p></div>
-      <div class="col"><h3>Create new income</h3><p>Finished films and upcoming projects can open new ways to earn.</p></div>
-      <div class="col"><h3>Build your own fanbase</h3><p>Filmmakers can grow an audience that stays with them beyond one film.</p></div>
+    <div class="benefits">
+      <div class="benefit">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3.4 3 3.4 15 0 18M12 3c-3.4 3-3.4 15 0 18"/></svg></div>
+        <h3>Reach new markets</h3>
+        <p>AI helps films cross languages and reach audiences in new regions.</p>
+      </div>
+      <div class="benefit">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 15l5-5 3 3 8-8"/><path d="M15 5h6v6"/></svg></div>
+        <h3>Create new income</h3>
+        <p>Finished films and upcoming projects can open new ways to earn.</p>
+      </div>
+      <div class="benefit">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17.5" cy="9" r="2.2"/><path d="M15.6 14.6c2.5.2 4.4 2.2 4.4 4.7"/></svg></div>
+        <h3>Build your own fanbase</h3>
+        <p>Filmmakers can grow an audience that stays with them beyond one film.</p>
+      </div>
     </div>
     <p class="zh">賦能創作者、放大他們的價值。觸及新市場：AI 幫電影跨越語言、觸及新地區的觀眾。創造新收入：無論已完成的作品或籌備中的計畫，都能開啟全新的收入方式。建立你自己的粉絲群：養出一群會跟著你、不只看一部片的觀眾。</p>
     <div class="pageno">23</div><div class="logo">giloo</div>
@@ -429,6 +484,20 @@
     <p class="lead">Next, we'll show how Giloo helps filmmakers upload their work, reach new audiences, connect with communities, and grow across markets.</p>
     <p class="zh">現在，讓我們打開廚房。到目前為止，我分享的是「為什麼」：為什麼觀眾關係重要，以及為什麼電影需要更好的方式在亞洲流動。接下來，我們會展示 Giloo 如何幫助創作者上傳作品、觸及新觀眾、連結社群，並跨市場成長。</p>
     <div class="pageno">24</div><div class="logo">giloo</div>
+  </section>
+
+  <!-- APPENDIX: IMPACT PARTNERS (how it works) -->
+  <section class="slide dark">
+    <div class="kicker">Appendix · How It Works</div>
+    <h2>Four steps to reach more audiences.</h2>
+    <div class="cols" style="grid-template-columns:repeat(4,1fr);gap:1.8rem;">
+      <div class="col"><h3>01 · Become a partner</h3><p>Any Giloo member can activate Impact Partner status.</p></div>
+      <div class="col"><h3>02 · Choose a film</h3><p>Pick from the catalog: documentaries, festival titles, shorts, and animation.</p></div>
+      <div class="col"><h3>03 · Recommend it your way</h3><p>We provide materials and post templates to share it with the right audience.</p></div>
+      <div class="col"><h3>04 · Track and earn</h3><p>Every rental or new subscription through your link is tracked, and you earn a share.</p></div>
+    </div>
+    <p class="zh">四個步驟：成為 Impact Partner（任何 Giloo 會員都能開通）。選一部你愛的片（紀錄片、影展片、短片、動畫）。用你的方式推薦（我們提供素材與貼文模板）。查看成效、領取分潤（每筆透過你連結的租借或新訂閱都會被追蹤）。</p>
+    <div class="pageno">25</div><div class="logo">giloo</div>
   </section>
 
 </div>
