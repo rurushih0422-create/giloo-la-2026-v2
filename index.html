@@ -23,7 +23,7 @@
   .slide{
     position:relative;height:100vh;scroll-snap-align:start;
     display:flex;flex-direction:column;justify-content:center;
-    padding:10vh 9vw;background:var(--paper);overflow:hidden;
+    padding:9vh 9vw;background:var(--paper);overflow:hidden;
   }
   .slide::before{
     content:"";position:absolute;inset:0;pointer-events:none;
@@ -33,89 +33,66 @@
   .slide > *{position:relative;z-index:1;}
   .slide.dark{background:var(--ink);color:var(--paper);}
   .slide.dark .kicker{color:var(--accent-soft);}
-  .slide.dark .zh{color:#b9b0a4;}
   .slide.dark::before{background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);}
   .slide.accent{background:var(--accent);color:#f7e9ec;}
   .slide.accent .kicker{color:#f0c6ce;}
-  .slide.accent .zh{color:#e9cdd3;}
   .slide.accent::before{opacity:.25;}
 
-  .kicker{font-family:var(--sans);text-transform:uppercase;letter-spacing:.28em;font-size:.72rem;font-weight:600;color:var(--accent);margin-bottom:1.6rem;}
-  h1{font-size:clamp(2.1rem,4.4vw,3.7rem);line-height:1.08;font-weight:600;letter-spacing:-.01em;max-width:20ch;margin-bottom:.4rem;}
-  h2{font-size:clamp(1.9rem,4vw,3.3rem);line-height:1.08;font-weight:600;letter-spacing:-.01em;max-width:22ch;margin-bottom:.4rem;}
-  .lead{font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.5;max-width:44ch;margin-top:1.5rem;color:var(--ink);}
-  .lead + .lead{margin-top:1rem;}
+  .kicker{font-family:var(--sans);text-transform:uppercase;letter-spacing:.28em;font-size:.72rem;font-weight:600;color:var(--accent);margin-bottom:1.4rem;}
+  h1{font-size:clamp(1.9rem,3.8vw,3.2rem);line-height:1.1;font-weight:600;letter-spacing:-.01em;max-width:24ch;margin-bottom:.4rem;}
+  h2{font-size:clamp(1.7rem,3.2vw,2.7rem);line-height:1.12;font-weight:600;letter-spacing:-.01em;max-width:26ch;margin-bottom:.4rem;}
+  .lead{font-size:clamp(1.05rem,1.55vw,1.3rem);line-height:1.5;max-width:52ch;margin-top:1.1rem;color:var(--ink);}
+  .lead + .lead{margin-top:.8rem;}
   .slide.dark .lead,.slide.accent .lead{color:inherit;}
-  .zh{font-family:var(--cjk);font-size:clamp(.95rem,1.2vw,1.05rem);line-height:1.7;color:var(--muted);margin-top:1.8rem;max-width:none;border-top:1px solid var(--line);padding-top:.8rem;font-weight:400;}
-  .slide.dark .zh{border-top-color:rgba(255,255,255,.22);}
-  .slide.accent .zh{border-top-color:rgba(255,255,255,.28);}
-  .spoken{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:#b9b0a4;margin:.35rem 0 .9rem;}
+  .spoken{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:#b9b0a4;margin:.35rem 0 .8rem;}
 
-  /* logo (official mark) + page number */
   .logo{position:absolute;right:9vw;bottom:6vh;width:74px;height:32px;background:url(giloo-logo.png) no-repeat right center;background-size:contain;text-indent:-9999px;overflow:hidden;white-space:nowrap;z-index:2;opacity:.95;}
   .slide.dark .logo,.slide.accent .logo{background-image:url(giloo-logo-white.png);}
   .pageno{position:absolute;left:9vw;bottom:6vh;font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;color:var(--muted);z-index:2;}
   .slide.dark .pageno,.slide.accent .pageno{color:rgba(255,255,255,.5);}
 
-  /* stats */
-  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem 3rem;margin-top:2.2rem;max-width:40ch;}
-  .stat .num{font-family:var(--serif);font-weight:600;font-size:clamp(1.8rem,3.4vw,2.6rem);color:var(--accent);letter-spacing:-.01em;}
-  .slide.dark .stat .num,.slide.accent .stat .num{color:var(--accent-soft);}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem 2rem;margin:1.8rem 0;max-width:none;}
+  .stat .num{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,3vw,2.4rem);color:var(--accent);letter-spacing:-.01em;}
   .slide.accent .stat .num{color:#f0c6ce;}
-  .stat .lab{display:block;font-family:var(--sans);font-size:.9rem;color:var(--muted);margin-top:.15rem;}
-  .slide.dark .stat .lab,.slide.accent .stat .lab{color:#b9b0a4;}
+  .stat .lab{display:block;font-family:var(--sans);font-size:.85rem;color:var(--muted);margin-top:.15rem;}
+  .slide.accent .stat .lab{color:#e9cdd3;}
+  .slide.numslide{justify-content:flex-start;}
+  .numslide .kicker{margin-top:14vh;}
+  .statbig{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4rem;margin-top:13vh;}
+  .statbig .stat{text-align:center;}
+  .statbig .num{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,4.2vw,3.3rem);letter-spacing:-.02em;line-height:1;color:#f0c6ce;}
+  .statbig .lab{display:block;font-family:var(--sans);font-size:.9rem;color:#e9cdd3;margin-top:.6rem;}
+  .numnote{position:absolute;left:9vw;right:9vw;bottom:19vh;display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;border-top:1px solid rgba(255,255,255,.3);padding-top:1.1rem;z-index:1;}
+  .numnote p{font-family:var(--serif);font-size:.98rem;line-height:1.5;color:#efd6db;opacity:.9;}
+  @media (max-width:820px){.statbig{grid-template-columns:repeat(2,1fr);margin-top:12vh;}.numnote{grid-template-columns:1fr;position:static;margin-top:2rem;}}
 
-  /* 3-col */
-  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.2rem;margin-top:2.2rem;}
-  .cols .col h3{font-family:var(--sans);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;}
-  .slide.dark .cols .col h3,.slide.accent .cols .col h3{color:var(--accent-soft);}
-  .slide.accent .cols .col h3{color:#f0c6ce;}
-  .cols .col p{font-size:1.1rem;line-height:1.5;max-width:26ch;}
-
-  /* flow infographic (numbered steps + arrows) */
-  .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:start;gap:1.2rem;margin-top:2.6rem;}
-  .flow-num{display:flex;align-items:center;justify-content:center;width:2.7rem;height:2.7rem;border-radius:50%;border:2px solid var(--accent);color:var(--accent);font-family:var(--sans);font-weight:700;font-size:1rem;margin-bottom:1rem;}
-  .slide.dark .flow-num,.slide.accent .flow-num{border-color:var(--accent-soft);color:var(--accent-soft);}
-  .flow-step h3{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.55rem;line-height:1.35;}
-  .slide.dark .flow-step h3,.slide.accent .flow-step h3{color:var(--accent-soft);}
-  .flow-step p{font-size:1.1rem;line-height:1.5;max-width:24ch;}
-  .flow-arrow{align-self:center;font-family:var(--sans);font-size:1.7rem;color:var(--muted);margin-top:2.4rem;}
-  .slide.dark .flow-arrow,.slide.accent .flow-arrow{color:#b9b0a4;}
-  @media (max-width:820px){.flow{grid-template-columns:1fr;}.flow-arrow{transform:rotate(90deg);margin:.4rem auto;}}
-
-  /* benefit cards (parallel items with icons) */
-  .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.6rem;}
-  .benefit .ico{width:2.5rem;height:2.5rem;margin-bottom:1rem;color:var(--accent);}
-  .slide.dark .benefit .ico,.slide.accent .benefit .ico{color:var(--accent-soft);}
-  .benefit .ico svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
-  .benefit h3{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.55rem;}
-  .slide.dark .benefit h3,.slide.accent .benefit h3{color:var(--accent-soft);}
-  .benefit p{font-size:1.1rem;line-height:1.5;max-width:24ch;}
-  @media (max-width:820px){.benefits{grid-template-columns:1fr;}}
-
-  /* split layout: text left (teleprompter) + supporting graphic right */
-  .split{display:grid;grid-template-columns:1.12fr .88fr;gap:4vw;align-items:center;}
+  .split{display:grid;grid-template-columns:1.15fr .85fr;gap:4vw;align-items:center;}
   .split-graphic{display:flex;align-items:center;justify-content:center;}
-  .split-graphic svg{width:100%;max-width:440px;height:auto;}
+  .split-graphic svg{width:100%;max-width:420px;height:auto;}
+  .taiwanslide .split{grid-template-columns:1fr 1fr;}
+  .taiwanslide .split-graphic svg{max-width:600px;}
   @media (max-width:820px){.split{grid-template-columns:1fr;}.split-graphic{display:none;}}
 
-  /* stacked lines (e.g. by-hand) */
-  .stack{margin-top:1.8rem;display:grid;gap:.5rem;}
-  .stack .li{font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:600;line-height:1.2;}
-
-  /* film pages */
-  .filmpage{display:grid;grid-template-columns:1.35fr .65fr;gap:5vw;align-items:center;}
-  .film-meta{font-family:var(--sans);font-size:.82rem;letter-spacing:.05em;color:var(--accent-soft);margin:1rem 0 .2rem;line-height:1.55;}
-  .poster-frame{position:relative;width:100%;min-height:300px;display:flex;align-items:center;justify-content:center;}
-  .poster-frame .poster{max-width:100%;max-height:64vh;width:auto;height:auto;display:block;box-shadow:0 10px 44px rgba(0,0,0,.55);}
+  .filmpage{display:grid;grid-template-columns:1.4fr .6fr;gap:4vw;align-items:center;}
+  .film-meta{font-family:var(--sans);font-size:.8rem;letter-spacing:.05em;color:var(--accent-soft);margin:.7rem 0 .2rem;line-height:1.55;}
+  .poster-frame{position:relative;width:100%;min-height:260px;display:flex;align-items:center;justify-content:center;}
+  .poster-frame .poster{max-width:100%;max-height:62vh;width:auto;height:auto;display:block;box-shadow:0 10px 44px rgba(0,0,0,.55);}
   .poster-frame .poster-ph{position:absolute;inset:0;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.03);display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--sans);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);padding:1rem;line-height:1.6;}
 
-  /* wide image placeholder (montage) */
-  .wideph{margin-top:2rem;min-height:26vh;border:1px solid var(--line);background:rgba(122,31,56,.04);display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--sans);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);padding:1rem;}
-  .slide.accent .wideph{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.05);color:#e9cdd3;}
+  .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:1.8rem;margin-top:2rem;}
+  .cols .col h3{font-family:var(--sans);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:.5rem;}
+  .cols .col p{font-size:1.05rem;line-height:1.5;}
+
+  .montage-img{width:100%;max-height:52vh;object-fit:cover;display:block;border:1px solid var(--line);margin-top:1.4rem;}
+  .montageslide h2{max-width:none;}
+  .montageslide .lead{max-width:none;}
+  .sitewrap{position:relative;width:100%;height:64vh;margin-top:2vh;border:1px solid var(--line);box-shadow:0 10px 34px rgba(0,0,0,.16);overflow:hidden;}
+  .sitewrap .siteimg{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
+  .siteover{position:absolute;left:0;right:0;bottom:0;padding:9vh 3.4vw 3.4vh;background:linear-gradient(to bottom,rgba(10,8,6,0) 0%,rgba(10,8,6,.5) 42%,rgba(10,8,6,.92) 100%);}
+  .siteover p{color:#fff;font-family:var(--serif);font-size:clamp(1rem,1.5vw,1.35rem);line-height:1.45;max-width:none;}
 
   .hint{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);font-family:var(--sans);font-size:.68rem;letter-spacing:.15em;color:rgba(255,255,255,.4);z-index:50;text-transform:uppercase;mix-blend-mode:difference;}
-  @media (max-width:820px){.filmpage{grid-template-columns:1fr;}.poster-frame{max-width:320px;min-height:auto;}.cols{grid-template-columns:1fr;}.stats{grid-template-columns:1fr;}}
+  @media (max-width:820px){.filmpage{grid-template-columns:1fr;}.poster-frame{max-width:300px;min-height:auto;}.cols{grid-template-columns:1fr;}.stats{grid-template-columns:repeat(2,1fr);}}
   @media print{.deck{height:auto;overflow:visible;}.slide{height:100vh;page-break-after:always;}.hint{display:none;}}
 </style>
 </head>
@@ -127,377 +104,433 @@
     <div class="kicker">Giloo · Los Angeles 2026</div>
     <h1>Beyond Festivals and Streamers</h1>
     <p class="lead">How films find audiences, unlock value, and drive impact. And what AI is about to change.</p>
-    <p class="zh">不只是影展與串流平台：影片如何找到觀眾、釋放價值、創造影響力，以及 AI 即將改變的事。</p>
     <div class="pageno">01</div><div class="logo">giloo</div>
   </section>
 
-  <!-- 2 INTRO -->
-  <section class="slide">
+  <!-- 2 -->
+  <section class="slide" style="justify-content:flex-start;">
     <div class="kicker">Introduction</div>
-    <h2>How Giloo Connects Films with Asian Audiences</h2>
-    <p class="lead">Hi, I'm Ruru, and I lead programming and marketing at Giloo, a Taiwan-based curation platform for documentary, art-house, and issue-driven films.</p>
-    <p class="lead">We connect independent films with the right audiences across Asia, and help filmmakers from around the world find their audiences here.</p>
-    <p class="zh">大家好，我是 Ruru，在 Giloo 負責節目策劃與行銷。Giloo 是一個來自台灣的策展平台，專注於紀錄片、藝術電影與議題型電影。我們幫助獨立電影在亞洲找到對的觀眾，也幫助世界各地的創作者在這裡找到他們的觀眾。</p>
+    <h2>To begin, let me briefly introduce Giloo.</h2>
+    <div class="sitewrap">
+      <img class="siteimg" src="posters/giloo-site.png" alt="Giloo platform — curated film selections" onerror="this.style.display='none'">
+      <div class="siteover">
+        <p>Giloo is a Taiwan-based curation platform for documentaries, art-house films, and issue-driven films. We connect independent films with the right audiences across Asia, and we help filmmakers from around the world find their audiences here. But Giloo is not built only on having a large film library.</p>
+      </div>
+    </div>
     <div class="pageno">02</div><div class="logo">giloo</div>
   </section>
 
-  <!-- 3 FOUNDATION (text) -->
+  <!-- 3 -->
   <section class="slide accent">
     <div class="kicker">Built on Audience Relationships</div>
-    <h2>We built Giloo on audience relationships, not just a content library.</h2>
-    <p class="lead">In a market the size of Taiwan, this gives us something more valuable than reach and traffic: trust, engagement, and community access.</p>
-    <p class="zh">Giloo 不是只靠「有很多片」建立起來的，而是靠長期經營觀眾關係。在台灣這樣規模的市場裡，這讓我們擁有比觸及率和流量更重要的東西：信任、互動，以及進入社群的能力。</p>
+    <h2>It is built on audience relationships.</h2>
+    <p class="lead">In a market the size of Taiwan, audience relationships give us something more valuable than reach and traffic.</p>
+    <p class="lead">They give us trust, engagement, and access to communities.</p>
+    <p class="lead">So, what do these audience relationships look like in numbers?</p>
     <div class="pageno">03</div><div class="logo">giloo</div>
   </section>
 
-  <!-- 3b STATS -->
-  <section class="slide accent">
+  <!-- 4 -->
+  <section class="slide accent numslide">
     <div class="kicker">By the Numbers</div>
-    <h2>What audience relationships look like.</h2>
-    <div class="stats" style="margin-top:3rem;gap:2.8rem 4.5rem;">
-      <div class="stat"><span class="num" style="font-size:clamp(2.4rem,5vw,3.6rem);">280,000+</span><span class="lab" style="font-size:1.05rem;">newsletter subscribers</span></div>
-      <div class="stat"><span class="num" style="font-size:clamp(2.4rem,5vw,3.6rem);">37%</span><span class="lab" style="font-size:1.05rem;">average open rate</span></div>
-      <div class="stat"><span class="num" style="font-size:clamp(2.4rem,5vw,3.6rem);">2,000+</span><span class="lab" style="font-size:1.05rem;">creators and partners</span></div>
-      <div class="stat"><span class="num" style="font-size:clamp(2.4rem,5vw,3.6rem);">9,000+</span><span class="lab" style="font-size:1.05rem;">curated film notes</span></div>
+    <div class="statbig">
+      <div class="stat"><span class="num">280,000+</span><span class="lab">newsletter subscribers</span></div>
+      <div class="stat"><span class="num">37%</span><span class="lab">average open rate</span></div>
+      <div class="stat"><span class="num">2,000+</span><span class="lab">creators and partners</span></div>
+      <div class="stat"><span class="num">9,000+</span><span class="lab">curated film notes</span></div>
     </div>
-    <p class="zh">28 萬以上電子報訂閱者、37% 平均開信率、2,000+ 創作者與合作夥伴、9,000+ 策展電影筆記。</p>
+    <div class="numnote">
+      <p>Giloo has more than two hundred and eighty thousand newsletter subscribers, with an average open rate of thirty-seven percent.</p>
+      <p>We also work with more than two thousand creators and partners, and we have more than nine thousand curated film notes.</p>
+      <p>These numbers show that we have a strong and active audience. But they also point to the larger problem we are trying to solve.</p>
+    </div>
     <div class="pageno">04</div><div class="logo">giloo</div>
   </section>
 
-  <!-- THE PROBLEM -->
+  <!-- 5 THE PROBLEM (funnel) -->
   <section class="slide dark">
-    <div class="kicker">The Problem</div>
-    <h1>It's not a content problem. It's a <span style="color:#e85c72;">distribution</span> problem.</h1>
-    <p class="lead">The industry has solved how to make more films. It has not solved how the right audiences discover them.</p>
-    <p class="lead">Most good films never reach the audience that would love them. The film is out there. No one helps people find it.</p>
-    <p class="zh">這不是內容的問題，而是發行的問題。產業已經解決了「如何拍出更多電影」，卻還沒解決「對的觀眾如何找到它們」。大多數好電影，從未觸及那些會愛上它們的觀眾。電影就在那裡，卻沒有人幫觀眾找到它。</p>
-    <div class="pageno">04</div><div class="logo">giloo</div>
-  </section>
-
-  <!-- 4 DISTRIBUTION GAP -->
-  <section class="slide">
-    <div class="kicker">Distribution Gap</div>
-    <h2>Access is not the same as audience understanding.</h2>
-    <p class="lead">Most distribution tells you where a film was screened or released. But for filmmakers, the harder question is where the next audience is.</p>
-    <p class="lead">Giloo helps filmmakers see what happens after release: who responded, who started talking, and where the story can travel next.</p>
-    <p class="zh">能被看見，不等於真正理解觀眾。大多數發行只告訴你影片在哪裡放映或上架，但更難的問題是：下一批觀眾在哪裡？Giloo 幫助創作者看見上映之後發生了什麼：誰有反應、誰開始討論，以及這個故事接下來可以走向哪裡。</p>
-    <div class="pageno">04</div><div class="logo">giloo</div>
-  </section>
-
-  <!-- 5 DATA TO STRATEGY -->
-  <section class="slide">
-    <div class="kicker">From Data to Strategy</div>
-    <h2>From data to audience strategy.</h2>
-    <p class="lead">Data tells you what happened. Audience understanding tells you what to do next.</p>
-    <p class="lead">For issue-driven films, the value is not only exposure. It is knowing where the story can travel next, what needs to be translated, and which market to enter first.</p>
-    <p class="zh">數據只能告訴你發生了什麼，觀眾理解才能告訴你下一步該怎麼做。對議題型電影來說，價值不只是曝光，而是知道這個故事接下來可以走向哪裡、哪些文化脈絡需要轉譯，以及應該先進入哪一個市場。</p>
+    <div class="split">
+      <div class="split-text">
+        <div class="kicker">The Problem</div>
+        <h1>It is not a content problem. It is a <span style="color:#e85c72;">distribution</span> problem.</h1>
+        <p class="lead">The industry already knows how to make more films. But it has not solved how the right audiences can discover them.</p>
+        <p class="lead">Many good films never reach the people who would love them. The film is already there, but no one helps people find it.</p>
+        <p class="lead">And this creates a distribution gap.</p>
+      </div>
+      <div class="split-graphic">
+        <svg viewBox="0 0 440 400" role="img" aria-label="Films and audiences, most connections are broken - the distribution gap">
+          <text x="30" y="28" fill="#b9b0a4" font-family="Arial" font-size="13" letter-spacing="2">FILMS</text>
+          <text x="410" y="28" text-anchor="end" fill="#b9b0a4" font-family="Arial" font-size="13" letter-spacing="2">AUDIENCES</text>
+          <!-- connected (red) -->
+          <g stroke="#e85c72" stroke-width="2.6" stroke-linecap="round">
+            <line x1="34" y1="86" x2="406" y2="86"/>
+            <line x1="34" y1="188" x2="406" y2="188"/>
+          </g>
+          <g fill="#e85c72">
+            <circle cx="34" cy="86" r="6.5"/><circle cx="406" cy="86" r="6.5"/>
+            <circle cx="34" cy="188" r="6.5"/><circle cx="406" cy="188" r="6.5"/>
+          </g>
+          <!-- broken (gray, gap in the middle) -->
+          <g stroke="#6f665c" stroke-width="2.6" stroke-linecap="round">
+            <line x1="34" y1="137" x2="156" y2="137"/><line x1="284" y1="137" x2="406" y2="137"/>
+            <line x1="34" y1="239" x2="156" y2="239"/><line x1="284" y1="239" x2="406" y2="239"/>
+            <line x1="34" y1="290" x2="146" y2="290" opacity=".62"/><line x1="294" y1="290" x2="406" y2="290" opacity=".62"/>
+            <line x1="34" y1="336" x2="156" y2="336" opacity=".45"/><line x1="284" y1="336" x2="406" y2="336" opacity=".45"/>
+          </g>
+          <g fill="#8a827a">
+            <circle cx="34" cy="137" r="6.5"/><circle cx="406" cy="137" r="6.5"/>
+            <circle cx="34" cy="239" r="6.5"/><circle cx="406" cy="239" r="6.5"/>
+            <circle cx="34" cy="290" r="6.5" opacity=".7"/><circle cx="406" cy="290" r="6.5" opacity=".7"/>
+            <circle cx="34" cy="336" r="6.5" opacity=".5"/><circle cx="406" cy="336" r="6.5" opacity=".5"/>
+          </g>
+          <polygon points="220,356 213,370 227,370" fill="#e85c72"/>
+          <text x="220" y="394" text-anchor="middle" fill="#e85c72" font-family="Arial" font-size="12" letter-spacing="3">DISTRIBUTION GAP</text>
+        </svg>
+      </div>
+    </div>
     <div class="pageno">05</div><div class="logo">giloo</div>
   </section>
 
-  <!-- 6 RELATIONSHIP CONTINUES -->
-  <section class="slide accent">
-    <div class="kicker">Where Relationships Continue</div>
-    <h2>Where the relationship can continue.</h2>
-    <p class="lead">Festivals gather an audience, then everyone goes home. Theaters sell the ticket, and the relationship ends at the door.</p>
-    <p class="lead">A platform lets the audience choose to stay: to follow a filmmaker, join a conversation, and come back for the next film.</p>
-    <p class="zh">影展把觀眾聚在一起，然後大家各自回家；戲院賣出一張票，關係在觀眾走出門口就結束了。平台讓觀眾可以選擇留下來：追蹤一位創作者、加入一場討論，並在下一部作品時再回來。</p>
+  <!-- 6 -->
+  <section class="slide">
+    <div class="kicker">Distribution Gap</div>
+    <h2>Access is not the same as audience understanding.</h2>
+    <p class="lead">Most distribution reports tell filmmakers where a film was screened or released. But the harder question is:<br><strong>where is the next audience?</strong></p>
+    <p class="lead">Giloo helps filmmakers see what happens after a release: who responded, who started talking, and where the story can travel next.</p>
+    <p class="lead">This is how we move from data to audience strategy.</p>
     <div class="pageno">06</div><div class="logo">giloo</div>
   </section>
 
-  <!-- 7 SUPER-SPREADERS -->
+  <!-- 7 -->
+  <section class="slide">
+    <div class="kicker">From Data to Strategy</div>
+    <h2>Data tells us what happened. Audience understanding tells us what to do next.</h2>
+    <p class="lead">For issue-driven films, the value is not only exposure.</p>
+    <p class="lead">It is knowing where the story can travel next, what cultural context needs to be translated, and which market to enter first.</p>
+    <p class="lead">To understand the audience, the relationship cannot end after one screening.</p>
+    <div class="pageno">07</div><div class="logo">giloo</div>
+  </section>
+
+  <!-- 8 -->
+  <section class="slide accent">
+    <div class="kicker">Where Relationships Continue</div>
+    <h2>Festivals gather an audience, but after the festival, everyone goes home.</h2>
+    <p class="lead">Theaters sell a ticket, but the relationship often ends when the audience leaves.</p>
+    <p class="lead">A platform lets the audience choose to stay. They can follow a filmmaker, join a conversation, and come back for the next film.</p>
+    <p class="lead">And among these audiences, some people can carry a story even further.</p>
+    <div class="pageno">08</div><div class="logo">giloo</div>
+  </section>
+
+  <!-- 9 SUPER-SPREADERS (spread) -->
   <section class="slide">
     <div class="split">
       <div class="split-text">
         <div class="kicker">Super-Spreaders</div>
-        <h2>Some audiences carry stories further.</h2>
-        <p class="lead">The most valuable audience members are not always the most numerous. They are the people and communities who host screenings, teach with the film, organize conversations, and bring the story into another room.</p>
+        <h2>The most valuable audience members are not always the largest group.</h2>
+        <p class="lead">They are the people and communities who host screenings, use films in teaching, organize conversations, and bring stories into new spaces.</p>
+        <p class="lead">We call them super-spreaders.</p>
+        <p class="lead">But for a story to travel through these people, trust is important.</p>
       </div>
       <div class="split-graphic">
-        <svg viewBox="0 0 400 340" role="img" aria-label="One film spreads through carriers to many people">
-          <g stroke="var(--accent)" stroke-width="1.6" fill="none" opacity=".55">
-            <path d="M104 170 C150 120,165 92,196 82"/>
-            <path d="M104 170 H196"/>
-            <path d="M104 170 C150 220,165 248,196 258"/>
+        <svg viewBox="0 0 430 380" role="img" aria-label="A film spreads through screenings, teaching, and conversations to many people">
+          <g stroke="var(--accent)" stroke-width="1.8" fill="none" opacity=".6">
+            <path d="M92 190 L184 70"/>
+            <path d="M92 190 H184"/>
+            <path d="M92 190 L184 310"/>
           </g>
-          <g stroke="var(--accent-soft)" stroke-width="1.2" fill="none" opacity=".5">
-            <path d="M218 82 H300"/><path d="M218 82 C258 72,280 56,300 50"/><path d="M218 82 C258 92,280 108,300 114"/>
-            <path d="M218 170 H300"/><path d="M218 170 C258 160,280 146,300 140"/><path d="M218 170 C258 180,280 194,300 200"/>
-            <path d="M218 258 H300"/><path d="M218 258 C258 248,280 234,300 228"/><path d="M218 258 C258 268,280 282,300 288"/>
+          <g stroke="var(--accent-soft)" stroke-width="1.2" fill="none" opacity=".55">
+            <path d="M214 70 L312 44"/><path d="M214 70 H312"/><path d="M214 70 L312 96"/>
+            <path d="M214 190 L312 164"/><path d="M214 190 H312"/><path d="M214 190 L312 216"/>
+            <path d="M214 310 L312 284"/><path d="M214 310 H312"/><path d="M214 310 L312 336"/>
           </g>
           <g fill="var(--muted)">
-            <circle cx="308" cy="50" r="5"/><circle cx="308" cy="82" r="5"/><circle cx="308" cy="114" r="5"/>
-            <circle cx="308" cy="140" r="5"/><circle cx="308" cy="170" r="5"/><circle cx="308" cy="200" r="5"/>
-            <circle cx="308" cy="228" r="5"/><circle cx="308" cy="258" r="5"/><circle cx="308" cy="288" r="5"/>
+            <circle cx="320" cy="44" r="5"/><circle cx="320" cy="70" r="5"/><circle cx="320" cy="96" r="5"/>
+            <circle cx="320" cy="164" r="5"/><circle cx="320" cy="190" r="5"/><circle cx="320" cy="216" r="5"/>
+            <circle cx="320" cy="284" r="5"/><circle cx="320" cy="310" r="5"/><circle cx="320" cy="336" r="5"/>
           </g>
-          <g fill="var(--paper)" stroke="var(--accent)" stroke-width="2.2">
-            <circle cx="206" cy="82" r="14"/><circle cx="206" cy="170" r="14"/><circle cx="206" cy="258" r="14"/>
+          <g fill="var(--accent)" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:1.5px;">
+            <text x="200" y="38">SCREENINGS</text>
+            <text x="200" y="158">TEACHING</text>
+            <text x="200" y="278">CONVERSATIONS</text>
           </g>
-          <circle cx="84" cy="170" r="28" fill="var(--accent)"/>
-          <polygon points="75,158 75,182 97,170" fill="var(--paper)"/>
+          <g fill="var(--paper)" stroke="var(--accent)" stroke-width="2.4">
+            <circle cx="200" cy="70" r="14"/><circle cx="200" cy="190" r="14"/><circle cx="200" cy="310" r="14"/>
+          </g>
+          <circle cx="66" cy="190" r="26" fill="var(--accent)"/>
+          <polygon points="58,178 58,202 80,190" fill="var(--paper)"/>
         </svg>
       </div>
     </div>
-    <p class="zh">最有價值的觀眾，不一定是數量最多的觀眾，而是那些會舉辦放映、用影片教學、組織對話，並把故事帶進下一個場域的人與社群。</p>
-    <div class="pageno">07</div><div class="logo">giloo</div>
+    <div class="pageno">09</div><div class="logo">giloo</div>
   </section>
 
-  <!-- IMPACT PARTNERS (concept) -->
+  <!-- 10 -->
   <section class="slide dark">
     <div class="kicker">Trust Leads to Discovery</div>
     <h2>Films travel through people who believe in them.</h2>
-    <p class="lead">On Giloo, audiences, creators, teachers, and community leaders can become Impact Partners. They share films with people they know.</p>
-    <p class="lead">When they bring in new viewers, they earn part of the revenue. This helps filmmakers reach new audiences through trusted voices.</p>
-    <p class="zh">在 Giloo，觀眾、創作者、老師與社群領袖都可以成為 Impact Partner，把電影分享給他們認識的人。當他們帶來新觀眾，就能獲得部分分潤。這讓創作者能透過值得信任的聲音，觸及新的觀眾。</p>
-    <div class="pageno">09</div><div class="logo">giloo</div>
-  </section>
-
-  <!-- 9 EVERY RELEASE -->
-  <section class="slide accent">
-    <div class="kicker">Every Release</div>
-    <h2>Every release should build the next audience.</h2>
-    <p class="lead">A release should not be the end of a film's journey. Each film should help build an audience relationship that can continue into the next story, the next issue, and the next community.</p>
-    <p class="zh">一次發行，不應該是一部電影旅程的終點。每一部片，都應該幫助建立一段能延續到下一個故事、下一個議題、下一個社群的觀眾關係。</p>
-    <div class="pageno">09</div><div class="logo">giloo</div>
-  </section>
-
-  <!-- 10 WHAT WE LEARNED -->
-  <section class="slide">
-    <div class="kicker">What the Data Showed</div>
-    <h2>People still watch serious stories.</h2>
-    <p class="lead">Everyone thought audiences only wanted short videos and quick content. But on Giloo, some of our most-watched films focus on serious social issues, cultural trauma, and underrepresented communities.</p>
-    <p class="lead">Let me show you a few of the most-watched and most-discussed films on Giloo.</p>
-    <p class="zh">大家以為觀眾只想看短影音、速食內容，但在 Giloo 上，我們觀看表現最好的作品，很多都聚焦在嚴肅社會議題、文化創傷，以及較少被看見的群體。接下來，讓我介紹幾部在 Giloo 上觀看數最高、最多人討論的電影。</p>
+    <p class="lead">On Giloo, audiences, creators, teachers, and community leaders can become Impact Partners.</p>
+    <p class="lead">They share films with people they already know. When they bring in new viewers, they earn part of the revenue.</p>
+    <p class="lead">This helps filmmakers reach new audiences through trusted voices.</p>
+    <p class="lead">And it means that every release can help build the next audience.</p>
     <div class="pageno">10</div><div class="logo">giloo</div>
   </section>
 
-  <!-- 11 ISLAND IN BETWEEN -->
+  <!-- 11 -->
+  <section class="slide accent">
+    <div class="kicker">Every Release</div>
+    <h2>A release should not be the end of a film's journey.</h2>
+    <p class="lead">Each film should build an audience relationship that can continue into the next story, the next issue, and the next community.</p>
+    <p class="lead">Our data also showed us something important about what these audiences want to watch.</p>
+    <div class="pageno">11</div><div class="logo">giloo</div>
+  </section>
+
+  <!-- 12 -->
+  <section class="slide">
+    <div class="kicker">What the Data Showed</div>
+    <h2>People still watch serious stories.</h2>
+    <p class="lead">Many people think audiences only want short videos and quick content.</p>
+    <p class="lead">But on Giloo, some of our most-watched films focus on serious social issues, cultural trauma, and communities that are often not seen.</p>
+    <p class="lead">Let me show you three examples.</p>
+    <div class="pageno">12</div><div class="logo">giloo</div>
+  </section>
+
+  <!-- 13 ISLAND IN BETWEEN -->
   <section class="slide dark">
     <div class="filmpage">
       <div class="txt">
         <div class="kicker">Issue-Driven Cinema · 01</div>
-        <p class="spoken">Island in Between, directed by Leo Chiang.</p>
         <h2>Island in Between</h2>
         <p class="film-meta">金門 · 2023 · dir. S. Leo Chiang · Academy Award nominee, Best Documentary Short</p>
-        <p class="lead">Kinmen is a small island between Taiwan and China. In this film, Leo returns to Kinmen to look at his own identity, his family story, and where Taiwan stands in the world. And it became Taiwan's first Oscar-nominated documentary.</p>
+        <p class="lead" style="font-size:1rem;max-width:50ch;">The first film is Island in Between, directed by S. Leo Chiang. Kinmen is a small island between Taiwan and China. In the film, Leo returns to Kinmen to look at his identity, his family story, and Taiwan's place in the world. The film was nominated for the Academy Award for Best Documentary Short, becoming Taiwan's first Oscar-nominated documentary.</p>
+        <p class="lead" style="font-size:1rem;max-width:50ch;">The next film shows how a documentary can create impact in schools.</p>
       </div>
       <div class="poster-frame"><span class="poster-ph">Island in Between<br>poster</span><img class="poster" src="posters/kinmen.jpg" alt="" onerror="this.remove()" onload="var p=this.previousElementSibling; if(p) p.style.display='none';"></div>
     </div>
-    <p class="zh">《金門》：一座位於台灣與中國之間的小島。導演江松長回到金門，凝視自己的身分、家族故事，以及台灣在世界上的位置。台灣首部入圍奧斯卡的紀錄片。</p>
-    <div class="pageno">11</div><div class="logo">giloo</div>
+    <div class="pageno">13</div><div class="logo">giloo</div>
   </section>
 
-  <!-- 12 AND MILES TO GO -->
+  <!-- 14 AND MILES TO GO -->
   <section class="slide dark">
     <div class="filmpage">
       <div class="txt">
         <div class="kicker">Issue-Driven Cinema · 02</div>
-        <p class="spoken">Another example is And Miles to Go Before I Sleep, directed by Tsai Tsung-lung.</p>
         <h2>And Miles to Go Before I Sleep</h2>
         <p class="film-meta">九槍 · 2022 · dir. Tsai Tsung-lung · Golden Horse Award, Best Documentary</p>
-        <p class="lead" style="font-size:1.05rem;max-width:48ch;">A real case in Taiwan: a Vietnamese migrant worker was shot and killed by police, shot nine times. The film had a strong impact, especially in schools, where teachers used it to help students understand migrant workers, labor rights, and basic human rights. Often, we are afraid because we do not understand, and film can help us build that understanding.</p>
+        <p class="lead" style="font-size:.98rem;max-width:52ch;">Another example is And Miles to Go Before I Sleep, directed by Tsai Tsung-lung. The film is based on a real case in Taiwan. A Vietnamese migrant worker was shot and killed by the police. He was shot nine times. The film had a strong impact in Taiwan, especially in schools. Teachers used it to help students understand migrant workers, labor rights, and basic human rights. Often, people are afraid because they do not understand. Film can help build that understanding.</p>
+        <p class="lead" style="font-size:.98rem;max-width:52ch;">The third example opened another difficult but important conversation.</p>
       </div>
       <div class="poster-frame"><span class="poster-ph">And Miles to Go<br>poster</span><img class="poster" src="posters/nineshots.jpg" alt="" onerror="this.remove()" onload="var p=this.previousElementSibling; if(p) p.style.display='none';"></div>
     </div>
-    <p class="zh">《九槍》：本片講述一起真實發生在台灣的案件，一名越南籍移工遭警方槍擊身亡，中了九槍。這部片在台灣造成很大迴響，尤其在校園：許多老師把它當作教材，幫助學生理解移工、勞工權益與基本人權。很多時候，我們因為不了解而恐懼，而電影能幫我們建立那份理解。</p>
-    <div class="pageno">12</div><div class="logo">giloo</div>
+    <div class="pageno">14</div><div class="logo">giloo</div>
   </section>
 
-  <!-- 13 BLACK BOX DIARIES -->
+  <!-- 15 BLACK BOX DIARIES -->
   <section class="slide dark">
     <div class="filmpage">
       <div class="txt">
         <div class="kicker">Issue-Driven Cinema · 03</div>
-        <p class="spoken">And the third example is Black Box Diaries.</p>
         <h2>Black Box Diaries</h2>
         <p class="film-meta">黑箱日記 · 2024 · dir. Shiori Itō · Academy Award nominee, Best Documentary Feature</p>
-        <p class="lead" style="font-size:1rem;line-height:1.5;max-width:50ch;">A journalist shares her story after sexual assault. The film looks at justice, courage, and the fight to tell the truth. It was not available to audiences in Japan, but it found a powerful response in Taiwan, connecting with Taiwan's own MeToo trauma, and opening a deeper conversation about how society often questions survivors instead of supporting them. It asks a difficult question: when someone speaks about sexual violence, are we willing to listen, and are we willing to believe them?</p>
+        <p class="lead" style="font-size:.94rem;max-width:54ch;">The third example is Black Box Diaries. A journalist shares her story after sexual assault. The film looks at justice, courage, and the fight to tell the truth. It was not available to general audiences in Japan, but it received a powerful response in Taiwan. It connected with Taiwan's own MeToo experience and opened a deeper conversation about how society often questions survivors instead of supporting them. The film asks a difficult question: when someone speaks about sexual violence, are we willing to listen, and are we willing to believe them?</p>
+        <p class="lead" style="font-size:.94rem;max-width:54ch;">These three films are very different, but we saw the same audience behavior.</p>
       </div>
       <div class="poster-frame"><span class="poster-ph">Black Box Diaries<br>poster</span><img class="poster" src="posters/blackbox.jpg" alt="" onerror="this.remove()" onload="var p=this.previousElementSibling; if(p) p.style.display='none';"></div>
     </div>
-    <p class="zh">一名記者在遭受性侵後站出來訴說自己的故事，凝視正義、勇氣與說出真相的抗爭。本片在日本無法上映，卻在台灣得到強烈迴響。它連結了台灣自身的 MeToo 創傷，並打開更深的對話：社會往往質疑倖存者，而非支持他們。</p>
-    <div class="pageno">13</div><div class="logo">giloo</div>
+    <div class="pageno">15</div><div class="logo">giloo</div>
   </section>
 
-  <!-- 14 SAME BEHAVIOR -->
+  <!-- 16 -->
   <section class="slide">
     <div class="kicker">What We Saw on Giloo</div>
-    <h1 style="max-width:none;">Different stories. Same audience behavior.</h1>
-    <p class="lead" style="max-width:56ch;">These films are very different. They come from different countries and speak to different issues. But on Giloo, we saw the same pattern: after people watched, the conversation continued. They shared their reactions, discussed the issues, and brought more people back to watch. That is what Giloo is built for.</p>
-    <p class="zh">這些電影非常不同，來自不同國家、談論不同議題。但在 Giloo 上，我們看到同一種模式：人們看完之後，對話並沒有結束。他們分享感受、討論議題，並帶更多人回來一起看。這正是 Giloo 存在的意義。</p>
-    <div class="pageno">14</div><div class="logo">giloo</div>
+    <h2>After people watched, the conversation continued.</h2>
+    <p class="lead">They shared their reactions, discussed the issues, and brought more people back to watch.</p>
+    <p class="lead">That is what Giloo is built for.</p>
+    <p class="lead">From this audience behavior, we learned three things.</p>
+    <div class="pageno">16</div><div class="logo">giloo</div>
   </section>
 
-  <!-- LEARNED 01 -->
+  <!-- 17 -->
   <section class="slide dark">
     <div class="kicker">What We Learned · 01</div>
-    <h1>Curation beats the algorithm.</h1>
-    <p class="lead">A human pointing at the right film does more for a niche title than any feed.</p>
-    <p class="zh">策展勝過演算法：一個人指向對的電影，比任何推薦系統都更有力。</p>
-    <div class="pageno">16</div><div class="logo">giloo</div>
+    <h2>First, curation can beat the algorithm.</h2>
+    <p class="lead">For a niche film, a trusted person pointing to the right film can be more powerful than a recommendation feed.</p>
+    <p class="lead">Our second lesson is about what people are willing to pay for.</p>
+    <div class="pageno">17</div><div class="logo">giloo</div>
   </section>
 
-  <!-- LEARNED 02 -->
+  <!-- 18 -->
   <section class="slide dark">
     <div class="kicker">What We Learned · 02</div>
-    <h1>People pay for meaning.</h1>
-    <p class="lead">Audiences will pay for issues and ideas, not only for entertainment.</p>
-    <p class="zh">人們為意義付費：觀眾願意為議題和想法付費，不只為娛樂。</p>
-    <div class="pageno">17</div><div class="logo">giloo</div>
+    <h2>People pay for meaning.</h2>
+    <p class="lead">Audiences are willing to pay for issues and ideas, not only for entertainment.</p>
+    <p class="lead">Our third lesson is about how films travel.</p>
+    <div class="pageno">18</div><div class="logo">giloo</div>
   </section>
 
-  <!-- LEARNED 03 -->
+  <!-- 19 -->
   <section class="slide dark">
     <div class="kicker">What We Learned · 03</div>
-    <h1>Community reaches people better than ads.</h1>
-    <p class="lead">A film travels further through the people who love it than through any ad budget.</p>
-    <p class="zh">社群比廣告更能觸及觀眾：電影透過喜愛它的人傳播，遠比任何廣告預算走得更遠。</p>
-    <div class="pageno">18</div><div class="logo">giloo</div>
+    <h2>Community can reach people better than advertising.</h2>
+    <p class="lead">A film can travel further through people who love it than through a large advertising budget.</p>
+    <p class="lead">When these conversations begin, we can turn them into programs.</p>
+    <div class="pageno">19</div><div class="logo">giloo</div>
   </section>
 
-  <!-- PROGRAMS (text) -->
+  <!-- 20 -->
   <section class="slide accent">
     <div class="kicker">Turning Conversations Into Programs</div>
-    <h2>Turning conversations into programs.</h2>
-    <p class="lead" style="max-width:52ch;">When audiences start responding to a film, we help turn that response into a program. Together with partners, we turn real social issues into online film festivals: human rights, justice, the environment, and more.</p>
-    <p class="lead" style="max-width:52ch;">And this is something we can build with you.</p>
-    <p class="zh">當觀眾開始對一部電影有反應，我們幫忙把那份反應變成一檔節目。我們與夥伴合作，把真實社會議題變成線上影展：人權、司法、環境等等。這也是我們可以和你一起做的事。</p>
-    <div class="pageno">19</div><div class="logo">giloo</div>
+    <h2>Together with our partners, we turn real social issues into online film festivals.</h2>
+    <p class="lead">These programs can focus on human rights, justice, the environment, migrant workers, social movements, and many other issues.</p>
+    <p class="lead">This is also something we can build with new partners.</p>
+    <p class="lead">Here are some examples of what those partnerships have created.</p>
+    <div class="pageno">20</div><div class="logo">giloo</div>
   </section>
 
-  <!-- MONTAGE (proof) -->
-  <section class="slide dark">
+  <!-- 21 MONTAGE -->
+  <section class="slide dark montageslide">
     <div class="kicker">Impact Through Partnership</div>
-    <h2 style="max-width:none;">Dozens of issue film festivals,<br>built with partners.</h2>
-    <figure style="margin:1.6rem 0 0;">
-      <img src="posters/montage.jpg" alt="Online film festivals montage" style="width:100%;max-height:54vh;object-fit:cover;display:block;border:1px solid var(--line);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div style="display:none;min-height:36vh;border:1px solid rgba(255,255,255,.16);align-items:center;justify-content:center;font-family:var(--sans);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);">Online film festivals montage — drop image into posters/montage.jpg</div>
-    </figure>
-    <p class="zh">多年來，Giloo 與夥伴合辦數十場議題線上影展：人權、司法、環境、移工、社會運動……每一場都把影片、社群與觀眾聚在一起。</p>
-    <div class="pageno">20</div><div class="logo">giloo</div>
-  </section>
-
-  <!-- 16 TAIWAN START -->
-  <section class="slide">
-    <div class="kicker">Taiwan Is Where We Start</div>
-    <h2>Taiwan is where we start.</h2>
-    <p class="lead">We start in Taiwan because this is where Giloo knows the audience best. Here, we can see how people respond to a story, what context they need, and which communities are ready to join the conversation.</p>
-    <p class="lead">Once we understand how a story moves in Taiwan, we can help it find its next audience across Asia.</p>
-    <p class="zh">我們從台灣開始，因為這是 Giloo 最了解觀眾的地方。在這裡，我們能看見人們如何回應一個故事、他們需要什麼樣的脈絡，以及哪些社群已經準備好加入對話。一旦我們了解一個故事在台灣如何流動，就能幫助它在亞洲找到下一批觀眾。</p>
-    <div class="pageno">16</div><div class="logo">giloo</div>
-  </section>
-
-  <!-- 17 RELEASE WINDOW -->
-  <section class="slide">
-    <div class="kicker">Which Audience, Which Market</div>
-    <h2>It is not just a release window.</h2>
-    <p class="lead">The same story may need a different entry point in each market. The real question is where to begin: which audience, which framing, which community, and which market.</p>
-    <p class="zh">同一個故事，在每一個市場可能需要不同的切入點。真正的問題是該從哪裡開始：哪一種觀眾、哪一種框架、哪一個社群、哪一個市場。</p>
-    <div class="pageno">17</div><div class="logo">giloo</div>
-  </section>
-
-  <!-- 18 BY HAND -->
-  <section class="slide dark">
-    <div class="kicker">The Work Is Still Manual</div>
-    <h2>Finding an audience is still done by hand.</h2>
-    <div class="stack">
-      <div class="li">Finding the right audience.</div>
-      <div class="li">Finding the right partner.</div>
-      <div class="li">Finding the right moment.</div>
-    </div>
-    <p class="lead">For most independent filmmakers, this is still handmade, slow, and expensive.</p>
-    <p class="zh">找到對的觀眾、找到對的合作夥伴、找到對的時機。對多數獨立創作者來說，這件事仍然非常手工、緩慢，而且昂貴。</p>
-    <div class="pageno">18</div><div class="logo">giloo</div>
-  </section>
-
-  <!-- 19 AI SMALL TEAMS -->
-  <section class="slide">
-    <div class="kicker">What AI Changes</div>
-    <h2>AI helps small teams do the work of a full team.</h2>
-    <p class="lead">AI does not replace curators, filmmakers, or community partners. It helps small teams do what used to require a full campaign staff: understand audiences, localize context, and activate communities.</p>
-    <p class="zh">AI 不會取代策展人、創作者或社群夥伴。但它可以幫助小團隊做到以前需要完整 campaign 團隊才能做的事：理解觀眾、在地化脈絡、啟動社群。</p>
-    <div class="pageno">19</div><div class="logo">giloo</div>
-  </section>
-
-  <!-- 20 AI NEW CHAPTER -->
-  <section class="slide accent">
-    <div class="kicker">The Answer Is AI</div>
-    <h1>AI opens a new chapter for film.</h1>
-    <p class="lead">For the first time, a finished film can reach audiences across markets without a studio, a sales agent, or the limits of language.</p>
-    <p class="zh">第一次，一部完成的影片能在沒有片廠、沒有國際銷售代理、也不受語言限制的情況下，觸及跨市場的觀眾。</p>
-    <div class="pageno">20</div><div class="logo">giloo</div>
-  </section>
-
-  <!-- 21 WHY GILOO AI -->
-  <section class="slide dark">
-    <div class="kicker">AI Needs Context</div>
-    <h2>AI needs context, not just prompts.</h2>
-    <p class="lead">Giloo's AI work is built on our own foundation: audience behavior, partner networks, curated film notes, and issue-based programming. This is what makes AI useful for impact making, not just content generation.</p>
-    <p class="zh">Giloo 的 AI 工作不是從零開始，而是建立在我們既有的基礎上：觀眾行為、合作夥伴網絡、策展電影筆記，以及議題型節目策劃。這些脈絡讓 AI 不只是生成內容，而是能真正幫助 impact making。</p>
+    <h2>Over the years, Giloo has built dozens of issue-based online film festivals with partners.</h2>
+    <p class="lead">Each program brings films, communities, and audiences together.</p>
+    <p class="lead">This work begins in Taiwan, but Taiwan is only our starting point.</p>
+    <img class="montage-img" src="posters/montage.jpg" alt="Online film festivals montage" onerror="this.style.display='none'">
     <div class="pageno">21</div><div class="logo">giloo</div>
   </section>
 
-  <!-- 22 UPLOAD ONCE (flow) -->
-  <section class="slide">
-    <div class="kicker">For Filmmakers: Start with Your Film</div>
-    <h2>Upload once. Reach everywhere.</h2>
-    <div class="flow">
-      <div class="flow-step"><div class="flow-num">01</div><h3>Upload your film</h3><p>A filmmaker uploads a finished film to Giloo.</p></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step"><div class="flow-num">02</div><h3>AI subtitles and translation</h3><p>AI creates subtitles and translates the film for different markets.</p></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step"><div class="flow-num">03</div><h3>AI distribution strategy</h3><p>AI suggests the right audiences, communities, and regions to start with, and where to distribute first.</p></div>
+  <!-- 22 TAIWAN (spread) -->
+  <section class="slide taiwanslide">
+    <div class="split">
+      <div class="split-text">
+        <div class="kicker">Taiwan Is Where We Start</div>
+        <h2>We start in Taiwan because this is where Giloo understands the audience best.</h2>
+        <p class="lead">Here, we can see how people respond to a story, what context they need, and which communities are ready to join the conversation.</p>
+        <p class="lead">Once we understand how a story moves in Taiwan, we can help it find its next audience across Asia.</p>
+        <p class="lead">But the same story may need a different entry point in each market.</p>
+      </div>
+      <div class="split-graphic">
+        <svg viewBox="0 0 580 290" role="img" aria-label="The same story goes from Taiwan into different markets, each responding differently, and insights return to Taiwan">
+          <g fill="var(--accent)" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:17px;font-weight:600;letter-spacing:.5px;">
+            <text x="8" y="45">TAIWAN</text>
+            <text x="232" y="45">SAME STORY</text>
+            <text x="228" y="110" font-size="28">&#8600;</text>
+            <text x="230" y="168" font-size="28">&#8594;</text>
+            <text x="228" y="226" font-size="28">&#8599;</text>
+          </g>
+          <line x1="352" y1="40" x2="398" y2="40" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/>
+          <polygon points="396,29 420,40 396,51" fill="var(--accent)"/>
+          <g fill="var(--accent)">
+            <circle cx="120" cy="40" r="8"/><circle cx="146" cy="40" r="8"/><circle cx="172" cy="40" r="8"/>
+          </g>
+          <g>
+            <circle cx="478" cy="40" r="8" fill="var(--paper)" stroke="var(--accent)" stroke-width="2.4"/>
+            <circle cx="506" cy="40" r="8" fill="var(--paper)" stroke="var(--accent)" stroke-width="2.4"/>
+            <circle cx="464" cy="100" r="8" fill="var(--accent)"/>
+            <circle cx="492" cy="100" r="8" fill="var(--paper)" stroke="var(--accent)" stroke-width="2.4"/>
+            <circle cx="520" cy="100" r="8" fill="var(--accent)"/>
+            <circle cx="478" cy="158" r="8" fill="var(--paper)" stroke="var(--accent)" stroke-width="2.4"/>
+            <circle cx="506" cy="158" r="8" fill="var(--accent)"/>
+            <circle cx="464" cy="216" r="8" fill="var(--accent)"/>
+            <circle cx="492" cy="216" r="8" fill="var(--accent)"/>
+            <circle cx="520" cy="216" r="8" fill="var(--paper)" stroke="var(--accent)" stroke-width="2.4"/>
+          </g>
+          <text x="492" y="258" fill="var(--muted)" text-anchor="middle" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:15px;letter-spacing:.5px;">DIFFERENT MARKETS</text>
+          <line x1="192" y1="259" x2="150" y2="259" stroke="var(--accent-soft)" stroke-width="5" stroke-linecap="round"/>
+          <polygon points="152,248 128,259 152,270" fill="var(--accent-soft)"/>
+          <text x="206" y="264" fill="var(--accent-soft)" style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:16px;font-weight:600;letter-spacing:.5px;">INSIGHTS RETURN</text>
+        </svg>
+      </div>
     </div>
-    <p class="zh">導演上傳完成的影片，AI 自動生成字幕並為不同市場翻譯，接著 AI 建議該從哪些觀眾、社群與地區開始、以及先在哪裡發行。上傳一次，觸及各地。</p>
     <div class="pageno">22</div><div class="logo">giloo</div>
   </section>
 
-  <!-- 23 EMPOWER FILMMAKERS (benefits) -->
+  <!-- 23 -->
   <section class="slide">
-    <div class="kicker">What AI Empowers</div>
-    <h2>Empower filmmakers to grow their value.</h2>
-    <div class="benefits">
-      <div class="benefit">
-        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3.4 3 3.4 15 0 18M12 3c-3.4 3-3.4 15 0 18"/></svg></div>
-        <h3>Reach new markets</h3>
-        <p>AI helps films cross languages and reach audiences in new regions.</p>
-      </div>
-      <div class="benefit">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 15l5-5 3 3 8-8"/><path d="M15 5h6v6"/></svg></div>
-        <h3>Create new income</h3>
-        <p>Finished films and upcoming projects can open new ways to earn.</p>
-      </div>
-      <div class="benefit">
-        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17.5" cy="9" r="2.2"/><path d="M15.6 14.6c2.5.2 4.4 2.2 4.4 4.7"/></svg></div>
-        <h3>Build your own fanbase</h3>
-        <p>Filmmakers can grow an audience that stays with them beyond one film.</p>
-      </div>
-    </div>
-    <p class="zh">賦能創作者、放大他們的價值。觸及新市場：AI 幫電影跨越語言、觸及新地區的觀眾。創造新收入：無論已完成的作品或籌備中的計畫，都能開啟全新的收入方式。建立你自己的粉絲群：養出一群會跟著你、不只看一部片的觀眾。</p>
+    <div class="kicker">Which Audience, Which Market</div>
+    <h2>So the question is not only when to release a film.</h2>
+    <p class="lead">The real questions are: which audience should we begin with? How should we frame the story? Which community should we work with? And which market should come first?</p>
+    <p class="lead">Today, finding these answers still requires a lot of manual work.</p>
     <div class="pageno">23</div><div class="logo">giloo</div>
   </section>
 
-  <!-- 24 HANDOFF -->
+  <!-- 24 -->
+  <section class="slide dark">
+    <div class="kicker">The Work Is Still Manual</div>
+    <h2>Teams need to find the right audience, the right partner, and the right moment.</h2>
+    <p class="lead">For most independent filmmakers, this work is still slow, expensive, and done by hand.</p>
+    <p class="lead">This is where AI can make a difference.</p>
+    <div class="pageno">24</div><div class="logo">giloo</div>
+  </section>
+
+  <!-- 25 -->
+  <section class="slide">
+    <div class="kicker">What AI Changes</div>
+    <h2>AI can help a small team do work that once required a full campaign team.</h2>
+    <p class="lead">It does not replace curators, filmmakers, or community partners.</p>
+    <p class="lead">Instead, it helps small teams understand audiences, localize context, and activate communities.</p>
+    <p class="lead">In this way, AI may open a new chapter for film.</p>
+    <div class="pageno">25</div><div class="logo">giloo</div>
+  </section>
+
+  <!-- 26 -->
+  <section class="slide accent">
+    <div class="kicker">The Answer Is AI</div>
+    <h1>For the first time, a finished film may be able to reach audiences across markets without a studio, a sales agent, or the same limits of language.</h1>
+    <p class="lead">But AI cannot do this well with prompts alone.</p>
+    <p class="lead">AI needs context.</p>
+    <div class="pageno">26</div><div class="logo">giloo</div>
+  </section>
+
+  <!-- 27 -->
+  <section class="slide dark">
+    <div class="kicker">AI Needs Context</div>
+    <h2>Giloo's AI work is built on the foundation we already have: audience behavior, partner networks, curated film notes, and experience in issue-based programming.</h2>
+    <p class="lead">This context makes AI useful for impact and distribution, not only for generating content.</p>
+    <p class="lead">So, what could this look like for a filmmaker?</p>
+    <div class="pageno">27</div><div class="logo">giloo</div>
+  </section>
+
+  <!-- 28 -->
+  <section class="slide">
+    <div class="kicker">For Filmmakers: Start with Your Film</div>
+    <h2>It starts with the film.</h2>
+    <p class="lead">First, the filmmaker uploads a finished film to Giloo.</p>
+    <p class="lead">Second, AI creates subtitles and translates the film for different markets.</p>
+    <p class="lead">Third, AI suggests the audiences, communities, and regions to begin with. It can also suggest where the film should be distributed first.</p>
+    <p class="lead">In simple terms: upload once, and prepare to reach more places.</p>
+    <p class="lead">This can create three kinds of value for filmmakers.</p>
+    <div class="pageno">28</div><div class="logo">giloo</div>
+  </section>
+
+  <!-- 29 -->
+  <section class="slide">
+    <div class="kicker">What AI Empowers</div>
+    <h2>First, they can reach new markets.</h2>
+    <p class="lead">AI can help films cross language barriers and reach audiences in new regions.</p>
+    <p class="lead">Second, they can create new income. Both finished films and upcoming projects can open new ways to earn revenue.</p>
+    <p class="lead">Third, filmmakers can build their own fanbase. They can grow an audience that stays with them beyond one film.</p>
+    <p class="lead">Now that we have looked at why this matters, let's move to how it works.</p>
+    <div class="pageno">29</div><div class="logo">giloo</div>
+  </section>
+
+  <!-- 30 HANDOFF -->
   <section class="slide dark">
     <div class="kicker">From Why to How</div>
     <h1>Now, let's open the kitchen.</h1>
-    <p class="lead">So far, I've shared why audience relationships matter, and why films need better ways to travel across Asia.</p>
-    <p class="lead">Next, we'll show how Giloo helps filmmakers upload their work, reach new audiences, connect with communities, and grow across markets.</p>
-    <p class="zh">現在，讓我們打開廚房。到目前為止，我分享的是「為什麼」：為什麼觀眾關係重要，以及為什麼電影需要更好的方式在亞洲流動。接下來，我們會展示 Giloo 如何幫助創作者上傳作品、觸及新觀眾、連結社群，並跨市場成長。</p>
-    <div class="pageno">24</div><div class="logo">giloo</div>
+    <p class="lead">Next, we will show how Giloo helps filmmakers upload their work, reach new audiences, connect with communities, and grow across markets.</p>
+    <p class="lead">Thank you.</p>
+    <div class="pageno">30</div><div class="logo">giloo</div>
   </section>
 
   <!-- APPENDIX: IMPACT PARTNERS (how it works) -->
   <section class="slide dark">
     <div class="kicker">Appendix · How It Works</div>
     <h2>Four steps to reach more audiences.</h2>
-    <div class="cols" style="grid-template-columns:repeat(4,1fr);gap:1.8rem;">
+    <div class="cols">
       <div class="col"><h3>01 · Become a partner</h3><p>Any Giloo member can activate Impact Partner status.</p></div>
       <div class="col"><h3>02 · Choose a film</h3><p>Pick from the catalog: documentaries, festival titles, shorts, and animation.</p></div>
       <div class="col"><h3>03 · Recommend it your way</h3><p>We provide materials and post templates to share it with the right audience.</p></div>
       <div class="col"><h3>04 · Track and earn</h3><p>Every rental or new subscription through your link is tracked, and you earn a share.</p></div>
     </div>
-    <p class="zh">四個步驟：成為 Impact Partner（任何 Giloo 會員都能開通）。選一部你愛的片（紀錄片、影展片、短片、動畫）。用你的方式推薦（我們提供素材與貼文模板）。查看成效、領取分潤（每筆透過你連結的租借或新訂閱都會被追蹤）。</p>
-    <div class="pageno">25</div><div class="logo">giloo</div>
+    <div class="pageno">31</div><div class="logo">giloo</div>
   </section>
 
 </div>
